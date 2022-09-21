@@ -11,6 +11,8 @@
  * Task: Modify the class so that only one thread is able to modify `value` at any given time.
  */
 
+#include <mutex>
+
 namespace ais2203
 {
 
@@ -23,11 +25,13 @@ public:
 
     void increment()
     {
+        std::lock_guard<std::mutex> lck(m);
         value++;
     }
 
     void decrement()
     {
+        std::lock_guard<std::mutex> lck(m);
         value--;
     }
 
@@ -38,6 +42,7 @@ public:
 
 private:
     int value;
+    std::mutex m;
 };
 
 } // namespace ais2203

@@ -5,14 +5,16 @@
 #include <mutex>
 #include <condition_variable>
 
-#include <iostream>
-
 namespace ais2203
 {
 
 void threadFunc(std::mutex &m, std::condition_variable &cv, bool &flag) {
 
-    // TODO: Block the calling thread until flag == true
+    std::unique_lock<std::mutex> lck(m);
+    while (!flag) {
+        cv.wait(lck);
+    }
+
 }
 
 } // namespace ais2203
