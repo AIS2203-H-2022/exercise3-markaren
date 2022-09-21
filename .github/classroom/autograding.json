@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "exercise1",
+      "setup": "mkdir build && cmake . -B build && cmake --build build --target test_exercise1",
+      "run": "cd build/tests && ./test_exercise1",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": null
+    },
+    {
+      "name": "exercise2",
+      "setup": "cmake . -B build && cmake --build build --target test_exercise2",
+      "run": "cd build/tests && ./test_exercise2",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": null
+    },
+    {
+      "name": "exercise3",
+      "setup": "sudo apt install libtbb-dev && cmake . -B build && cmake --build build --target test_exercise3",
+      "run": "cd build/tests && ./test_exercise3",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": null
+    }
+  ]
+}
