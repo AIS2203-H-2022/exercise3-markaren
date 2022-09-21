@@ -3,7 +3,7 @@
 #define TEST_EXERCISE_EXERCISE3_HPP
 
 #include <algorithm>
-#include <execution>
+#include <execution> // Not supported on Apple Clang. Requires linkage to tbb on linux.
 #include <functional>
 #include <thread>
 #include <vector>
