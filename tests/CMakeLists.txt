@@ -14,3 +14,6 @@ add_test(NAME test_exercise2 COMMAND test_exercise2)
 
 add_executable(test_exercise3 test_exercise3.cpp)
 add_test(NAME test_exercise3 COMMAND test_exercise3)
+if (UNIX)
+  target_link_libraries(test_exercise3 tbb)
+endif()
